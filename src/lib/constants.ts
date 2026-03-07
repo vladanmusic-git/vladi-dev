@@ -106,6 +106,49 @@ export const STATS = [
   { value: "100%", label: "Solo Built, Start to Finish" },
 ];
 
+export const GALLERY = [
+  {
+    src: "/images/portfolio/ai-assistant-voice.jpg",
+    title: "AI Assistant App",
+    category: "AI",
+  },
+  {
+    src: "/images/portfolio/shield-safety-app.jpg",
+    title: "Safety Alert System",
+    category: "Apps + AI",
+  },
+  {
+    src: "/images/portfolio/real-estate-app.jpg",
+    title: "Real Estate App",
+    category: "Mobile Apps",
+  },
+  {
+    src: "/images/portfolio/ai-notes-gpt.jpg",
+    title: "AI Notes with GPT",
+    category: "AI",
+  },
+  {
+    src: "/images/portfolio/finance-dashboard.jpg",
+    title: "Finance Dashboard",
+    category: "Mobile Apps",
+  },
+  {
+    src: "/images/portfolio/agropulse-ai-farm.jpg",
+    title: "AgroPulse Farm AI",
+    category: "Apps + AI",
+  },
+  {
+    src: "/images/portfolio/healthcare-app.jpg",
+    title: "Healthcare Booking",
+    category: "Mobile Apps",
+  },
+  {
+    src: "/images/portfolio/premium-ai-monetization.jpg",
+    title: "Premium AI Monetization",
+    category: "Apps + AI",
+  },
+];
+
 export const NAV_ITEMS = [
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
