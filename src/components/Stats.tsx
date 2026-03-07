@@ -1,19 +1,22 @@
 import { STATS } from "@/lib/constants";
+import AnimateIn from "./AnimateIn";
+import AnimatedCounter from "./AnimatedCounter";
 
 export default function Stats() {
   return (
     <section className="border-y border-card-border bg-card py-16">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-3xl font-bold text-accent md:text-4xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-sm text-muted">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        <AnimateIn variant="fadeIn">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {STATS.map((stat) => (
+              <AnimatedCounter
+                key={stat.label}
+                value={stat.value}
+                label={stat.label}
+              />
+            ))}
+          </div>
+        </AnimateIn>
       </div>
     </section>
   );

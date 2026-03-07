@@ -1,13 +1,18 @@
 import Image from "next/image";
 import { HERO } from "@/lib/constants";
+import AnimateIn from "./AnimateIn";
+import TypeWriter from "./TypeWriter";
 
 export default function Hero() {
   return (
     <section className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-12 px-6 pt-32 pb-20 md:flex-row md:pt-40 md:pb-28">
-      <div className="flex-1 text-center md:text-left">
+      <AnimateIn variant="fadeUp" className="flex-1 text-center md:text-left">
         <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
           {HERO.headline}
         </h1>
+        <div className="mt-3">
+          <TypeWriter roles={HERO.roles} />
+        </div>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
           {HERO.subtext}
         </p>
@@ -25,18 +30,21 @@ export default function Hero() {
             {HERO.cta2}
           </a>
         </div>
-      </div>
-      <div className="flex-shrink-0">
-        <div className="relative h-56 w-56 overflow-hidden rounded-3xl shadow-2xl md:h-72 md:w-72">
-          <Image
-            src="/images/profile.png"
-            alt="Vladi Mijatovic"
-            fill
-            className="object-cover"
-            priority
-          />
+      </AnimateIn>
+      <AnimateIn variant="scaleIn" className="flex-shrink-0">
+        <div className="relative">
+          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-accent/20 via-purple-500/10 to-pink-500/10 blur-2xl" />
+          <div className="relative h-56 w-56 overflow-hidden rounded-3xl shadow-2xl md:h-72 md:w-72">
+            <Image
+              src="/images/profile.png"
+              alt="Vladi Mijatovic"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
-      </div>
+      </AnimateIn>
     </section>
   );
 }
