@@ -1,4 +1,4 @@
-import { Smartphone, Globe, Sparkles, Terminal } from "lucide-react";
+import { Smartphone, Globe, Sparkles, Terminal, Palette, Megaphone } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import AnimateIn from "./AnimateIn";
 
@@ -7,6 +7,8 @@ const iconMap = {
   globe: Globe,
   sparkles: Sparkles,
   terminal: Terminal,
+  palette: Palette,
+  megaphone: Megaphone,
 };
 
 export default function Services() {
@@ -18,18 +20,18 @@ export default function Services() {
             What I Build
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
-            Complete solutions from concept to deployment. I handle design,
-            development, backend, payments, and store submission.
+            End-to-end solutions: code, design, AI, marketing, and everything
+            in between. One developer, complete delivery.
           </p>
         </AnimateIn>
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon];
             return (
               <AnimateIn key={service.title} variant="fadeUp" delay={i * 0.1}>
-                <div className="group h-full rounded-2xl border border-card-border bg-card p-8 transition-shadow hover:shadow-lg">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                    <Icon className="h-6 w-6 text-accent" />
+                <div className="card-hover card-accent-border group h-full rounded-2xl border border-card-border bg-card p-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 transition-colors group-hover:bg-accent/20">
+                    <Icon className="h-6 w-6 text-accent transition-transform group-hover:scale-110" />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold">
                     {service.title}

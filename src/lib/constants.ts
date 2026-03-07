@@ -18,11 +18,12 @@ export const LINKS = {
 export const HERO = {
   headline: "The Claude Code Developer",
   subtext:
-    "I build complete apps, websites, and AI systems 3-5x faster using Claude Code. From the first wireframe to a live product on the App Store and Google Play.",
+    "I build complete apps, websites, and AI systems 3-5x faster using Claude Code. But I go beyond code. I research your market, design your brand, optimize your SEO, and deliver a polished product from the first wireframe to the App Store.",
   roles: [
     "Mobile App Developer",
     "AI Integration Specialist",
     "Full-Stack Engineer",
+    "Product Designer & Strategist",
     "Claude Code Expert",
   ],
   cta1: "View My Work",
@@ -45,18 +46,32 @@ export const SERVICES = [
     icon: "globe" as const,
   },
   {
-    title: "AI Features and Assistants",
+    title: "AI Integration",
     description:
-      "Smart chatbots, content generation, AI search, and automated workflows. I integrate Claude, ChatGPT, Gemini, and any LLM API into your existing app or website.",
-    tech: ["Claude API", "OpenAI", "Gemini", "n8n"],
+      "I integrate any AI into your app or website. Claude, ChatGPT, Gemini, Grok, or any other LLM API. Smart chatbots, content generation, AI search, image recognition, and voice assistants.",
+    tech: ["Claude API", "OpenAI", "Gemini", "Grok"],
     icon: "sparkles" as const,
   },
   {
-    title: "Claude Code Skills and Agents",
+    title: "Automation and Workflows",
     description:
-      "Custom Claude Code skills, agents, MCP server integrations, and AI workflow automation. I build the tools that make your development team faster.",
-    tech: ["Claude Code", "Agent SDK", "MCP", "n8n"],
+      "Custom Claude Code agents, MCP server integrations, n8n workflow automation, and AI-powered pipelines. I build the tools that make your development team faster and your business more efficient.",
+    tech: ["n8n", "Claude Code", "Agent SDK", "MCP"],
     icon: "terminal" as const,
+  },
+  {
+    title: "Design and Brand Identity",
+    description:
+      "Custom visual identity, app icons, fonts, color systems, UI/UX design, and creative assets. I give your product a distinctive look and a stronger brand presence that stands out.",
+    tech: ["UI/UX Design", "Figma", "Brand Identity", "Custom Assets"],
+    icon: "palette" as const,
+  },
+  {
+    title: "SEO, Marketing and Ads",
+    description:
+      "SEO optimization, market research, ad campaigns, positioning strategy, content marketing, and App Store Optimization. I help your product get found and grow.",
+    tech: ["SEO", "Google Ads", "ASO", "Content Strategy"],
+    icon: "megaphone" as const,
   },
 ];
 
@@ -225,7 +240,9 @@ export const ABOUT = {
   story: [
     "Before I wrote my first line of code, I spent 15 years composing music for Hollywood films, performing at Carnegie Hall, and graduating from Berklee College of Music and the University of Music and Performing Arts in Munich.",
     "That creative career gave me something most developers lack: an obsessive attention to detail, deep intuition for how people experience products, and the discipline to manage complex projects solo from start to finish.",
-    "Today I combine that creative foundation with serious engineering skills. I build production software that real people use and pay for. The same precision I brought to film scores is what I bring to every line of code.",
+    "I do not believe in throwing together random apps just to deliver something fast. I approach every project with care, deep research, and real strategic thinking. I look for what makes your idea different, how it can stand out in the market, and how to shape it into something people actually want.",
+    "My work goes beyond coding. I think about SEO, positioning, visual identity, and the details that make a product feel polished and professional. That includes custom images, icons, fonts, and creative assets that give your app a distinctive look and stronger brand presence.",
+    "The most important thing you should know about me is simple: I care. I care about the product, the details, and delivering work that is thoughtful, high quality, and built to make a real impact.",
   ],
   education: [
     { school: "Berklee College of Music", degree: "BM, 2010" },
