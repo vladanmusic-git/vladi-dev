@@ -1,10 +1,11 @@
-import { Smartphone, Globe, Sparkles } from "lucide-react";
+import { Smartphone, Globe, Sparkles, Terminal } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 
 const iconMap = {
   smartphone: Smartphone,
   globe: Globe,
   sparkles: Sparkles,
+  terminal: Terminal,
 };
 
 export default function Services() {
@@ -18,7 +19,7 @@ export default function Services() {
           Complete solutions from concept to deployment. I handle design,
           development, backend, payments, and store submission.
         </p>
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service) => {
             const Icon = iconMap[service.icon];
             return (

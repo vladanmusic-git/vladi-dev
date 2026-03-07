@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Vladi Mijatovic",
-  title: "Vladi Mijatovic | Full-Stack Developer and AI Integration Specialist",
+  title: "Vladi Mijatovic | Claude Code Developer, AI Apps, Websites",
   description:
-    "I build complete mobile apps, websites, and AI systems from scratch. React Native, Next.js, TypeScript, Claude API, OpenAI. Based in Los Angeles.",
+    "Claude Code developer based in Los Angeles. I build complete mobile apps, websites, and AI systems 3-5x faster. React Native, Next.js, TypeScript, Claude API, OpenAI.",
   url: "https://vladi-dev.vercel.app",
   email: "vladanmijatovic@me.com",
 };
@@ -16,9 +16,9 @@ export const LINKS = {
 };
 
 export const HERO = {
-  headline: "I Build Apps, Websites, and AI Systems from Scratch",
+  headline: "The Claude Code Developer",
   subtext:
-    "Senior full-stack developer based in Los Angeles. I take your idea from the first wireframe to a live product on the App Store and Google Play.",
+    "I build complete apps, websites, and AI systems 3-5x faster using Claude Code. From the first wireframe to a live product on the App Store and Google Play.",
   cta1: "View My Work",
   cta2: "Get in Touch",
 };
@@ -44,6 +44,13 @@ export const SERVICES = [
       "Smart chatbots, content generation, AI search, and automated workflows. I integrate Claude, ChatGPT, Gemini, and any LLM API into your existing app or website.",
     tech: ["Claude API", "OpenAI", "Gemini", "n8n"],
     icon: "sparkles" as const,
+  },
+  {
+    title: "Claude Code Skills and Agents",
+    description:
+      "Custom Claude Code skills, agents, MCP server integrations, and AI workflow automation. I build the tools that make your development team faster.",
+    tech: ["Claude Code", "Agent SDK", "MCP", "n8n"],
+    icon: "terminal" as const,
   },
 ];
 
@@ -102,7 +109,7 @@ export const ABOUT = {
 export const STATS = [
   { value: "248,000+", label: "Words of Production Content" },
   { value: "1", label: "Complete App, Live on Google Play" },
-  { value: "3", label: "AI APIs Integrated" },
+  { value: "3-5x", label: "Faster Delivery with Claude Code" },
   { value: "100%", label: "Solo Built, Start to Finish" },
 ];
 
