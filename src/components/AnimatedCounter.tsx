@@ -48,7 +48,7 @@ export default function AnimatedCounter({
 
   return (
     <div ref={ref} className="text-center">
-      <p className="text-3xl font-bold text-accent md:text-4xl">{display}</p>
+      <p className="gradient-text text-3xl font-bold md:text-4xl">{display}</p>
       <p className="mt-2 text-sm text-muted">{label}</p>
     </div>
   );

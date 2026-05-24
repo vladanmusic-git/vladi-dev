@@ -12,7 +12,7 @@ export default function Footer() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              className="link-underline text-sm text-muted transition-colors hover:text-foreground"
             >
               {item.label}
             </a>

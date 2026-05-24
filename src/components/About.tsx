@@ -8,7 +8,7 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-3xl">
           <AnimateIn variant="fadeIn">
-            <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+            <h2 className="gradient-text text-center text-3xl font-bold tracking-tight md:text-4xl">
               From Film Scores to Source Code
             </h2>
           </AnimateIn>
@@ -26,7 +26,7 @@ export default function About() {
               {ABOUT.education.map((edu) => (
                 <div
                   key={edu.school}
-                  className="flex items-center gap-3 rounded-xl border border-card-border bg-card px-5 py-3"
+                  className="card-hover flex items-center gap-3 rounded-xl border border-card-border bg-card px-5 py-3"
                 >
                   <GraduationCap className="h-5 w-5 text-accent" />
                   <div>

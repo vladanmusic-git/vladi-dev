@@ -39,9 +39,11 @@ export default function Platforms() {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 rounded-2xl border border-card-border bg-card p-8 text-center transition-shadow hover:shadow-lg"
+                className="card-hover group flex flex-col items-center gap-3 rounded-2xl border border-card-border bg-card p-8 text-center"
               >
-                <p.icon className="h-8 w-8 text-accent" />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 transition-all group-hover:bg-accent/20 group-hover:shadow-lg group-hover:shadow-accent/20">
+                  <p.icon className="h-7 w-7 text-accent transition-transform group-hover:scale-110 group-hover:rotate-3" />
+                </div>
                 <p className="text-lg font-semibold">{p.name}</p>
                 <p className="text-sm text-muted">{p.description}</p>
               </a>
