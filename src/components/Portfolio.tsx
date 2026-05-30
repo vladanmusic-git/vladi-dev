@@ -19,6 +19,14 @@ const spanClass = [
   "lg:col-span-2",
 ];
 
+// Filenames shown in each card's terminal title bar.
+const files = [
+  "agent-toolchain.ts",
+  "bot-fleet.ts",
+  "voice-agent.ts",
+  "consumer-app.tsx",
+];
+
 export default function Portfolio() {
   return (
     <section id="work" className="relative py-20 md:py-28">
@@ -50,44 +58,58 @@ export default function Portfolio() {
               >
                 <SpotlightCard
                   className={cn(
-                    "group flex h-full flex-col p-7 md:p-8",
+                    "group flex h-full flex-col overflow-hidden",
                     project.featured && "border-beam",
                   )}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-card-border bg-gradient-to-br from-accent/20 to-accent-2/10">
-                      <Icon className="h-6 w-6 text-accent-2" />
-                    </div>
-                    <span className="rounded-full border border-card-border bg-white/[0.03] px-3 py-1 text-xs font-medium text-foreground/70">
+                  {/* Terminal window title bar */}
+                  <div className="flex items-center gap-3 border-b border-card-border bg-white/[0.02] px-4 py-3">
+                    <span className="flex gap-2">
+                      <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                      <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                      <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                    </span>
+                    <span className="font-mono text-xs text-subtle">
+                      {files[i]}
+                    </span>
+                    <span className="ml-auto rounded-full border border-card-border bg-white/[0.03] px-2.5 py-0.5 text-[10px] font-medium text-foreground/60">
                       {project.badge}
                     </span>
                   </div>
 
-                  <h3
-                    className={cn(
-                      "mt-5 font-bold tracking-tight",
-                      wide ? "text-2xl md:text-3xl" : "text-xl",
-                    )}
-                  >
-                    {project.title}
-                  </h3>
-                  <p className="mt-1 font-mono text-xs text-accent-2">
-                    {project.tagline}
-                  </p>
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-card-border bg-gradient-to-br from-accent/20 to-accent-2/10">
+                      <Icon className="h-5 w-5 text-accent-2" />
+                    </div>
 
-                  <p className="mt-4 text-sm leading-relaxed text-muted">
-                    {project.description}
-                  </p>
+                    <h3
+                      className={cn(
+                        "mt-5 font-bold tracking-tight",
+                        wide ? "text-2xl md:text-3xl" : "text-xl",
+                      )}
+                    >
+                      {project.title}
+                    </h3>
+                    <p className="mt-1.5 font-mono text-xs">
+                      <span className="text-accent-2">❯</span>{" "}
+                      <span className="text-muted">{project.tagline}</span>
+                    </p>
 
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-card-border bg-white/[0.03] px-2.5 py-1 text-xs text-muted"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    <p className="mt-4 text-sm leading-relaxed text-muted">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                      {project.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-md border border-card-border bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-muted"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </SpotlightCard>
               </AnimateIn>
