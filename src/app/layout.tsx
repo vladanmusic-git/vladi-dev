@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
@@ -9,8 +9,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: SITE.title,
   description: SITE.description,
+  keywords: [
+    "Senior AI Engineer",
+    "Agentic LLM Systems",
+    "Claude Code",
+    "Codex",
+    "MCP servers",
+    "Model Context Protocol",
+    "AI voice agents",
+    "Next.js",
+    "TypeScript",
+    "Vladi Mijatovic",
+  ],
+  authors: [{ name: SITE.name, url: SITE.url }],
+  alternates: { canonical: SITE.url },
   openGraph: {
     title: SITE.title,
     description: SITE.description,
@@ -18,7 +33,16 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     type: "website",
   },
-  metadataBase: new URL(SITE.url),
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#05060a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -27,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>

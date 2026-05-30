@@ -1,269 +1,208 @@
 export const SITE = {
   name: "Vladi Mijatovic",
-  title: "Vladi Mijatovic | Claude Code Developer, AI Apps, Websites",
+  title: "Vladi Mijatovic | Senior AI Engineer, Agentic LLM Systems and MCP",
   description:
-    "Claude Code developer based in Los Angeles. I build complete mobile apps, websites, and AI systems 3-5x faster. React Native, Next.js, TypeScript, Claude API, OpenAI.",
-  url: "https://vladi-dev.vercel.app",
-  email: "vladanmijatovic@me.com",
+    "Senior AI engineer who ships production AI agents end to end, from the LLM toolchain down to billing and uptime. Claude Code and Codex tooling, custom MCP servers, AI voice agents, full-stack TypeScript.",
+  url: "https://vladii.com",
+  email: "ai@vladii.com",
+  location: "Remote, US hours",
 };
 
 export const LINKS = {
-  upwork: "https://www.upwork.com/freelancers/~01fe02d985743fdef0",
-  fiverr: "https://www.fiverr.com/vladi_jobs",
   linkedin: "https://www.linkedin.com/in/vladi-jobs-1ba27b3b5",
-  googlePlay:
-    "https://play.google.com/store/apps/details?id=com.svetbrojeva.app",
+  upwork: "https://www.upwork.com/freelancers/~01fe02d985743fdef0",
 };
+
+export const CV_DOWNLOAD = "/Vladi-Mijatovic-CV.pdf";
 
 export const HERO = {
-  headline: "The Claude Code Developer",
-  subtext:
-    "I build complete apps, websites, and AI systems 3-5x faster using Claude Code. But I go beyond code. I research your market, design your brand, optimize your SEO, and deliver a polished product from the first wireframe to the App Store.",
+  badge: "Senior AI Engineer",
+  headline: "Vladi Mijatovic",
   roles: [
-    "Mobile App Developer",
-    "AI Integration Specialist",
-    "Full-Stack Engineer",
-    "Product Designer & Strategist",
-    "Claude Code Expert",
+    "Agentic LLM Systems",
+    "Claude Code and Codex Tooling",
+    "Custom MCP Servers",
+    "AI Voice Agents",
+    "Multi-Model Routing",
   ],
-  cta1: "View My Work",
-  cta2: "Get in Touch",
-};
-
-export const SERVICES = [
-  {
-    title: "Mobile Apps",
-    description:
-      "Complete iOS and Android apps built with React Native. From UI design to App Store submission. Payments, subscriptions, push notifications, and database included.",
-    tech: ["React Native", "Expo", "TypeScript", "RevenueCat"],
-    icon: "smartphone" as const,
-  },
-  {
-    title: "Websites and Landing Pages",
-    description:
-      "Fast, modern websites deployed on Vercel or Netlify. From simple landing pages to full web apps with user accounts, databases, and payment processing.",
-    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    icon: "globe" as const,
-  },
-  {
-    title: "AI Integration",
-    description:
-      "I integrate any AI into your app or website. Claude, ChatGPT, Gemini, Grok, or any other LLM API. Smart chatbots, content generation, AI search, image recognition, and voice assistants.",
-    tech: ["Claude API", "OpenAI", "Gemini", "Grok"],
-    icon: "sparkles" as const,
-  },
-  {
-    title: "Automation and Workflows",
-    description:
-      "Custom Claude Code agents, MCP server integrations, n8n workflow automation, and AI-powered pipelines. I build the tools that make your development team faster and your business more efficient.",
-    tech: ["n8n", "Claude Code", "Agent SDK", "MCP"],
-    icon: "terminal" as const,
-  },
-  {
-    title: "Design and Brand Identity",
-    description:
-      "Custom visual identity, app icons, fonts, color systems, UI/UX design, and creative assets. I give your product a distinctive look and a stronger brand presence that stands out.",
-    tech: ["UI/UX Design", "Figma", "Brand Identity", "Custom Assets"],
-    icon: "palette" as const,
-  },
-  {
-    title: "SEO, Marketing and Ads",
-    description:
-      "SEO optimization, market research, ad campaigns, positioning strategy, content marketing, and App Store Optimization. I help your product get found and grow.",
-    tech: ["SEO", "Google Ads", "ASO", "Content Strategy"],
-    icon: "megaphone" as const,
-  },
-];
-
-export const PROJECTS = [
-  {
-    title: "Svet Brojeva",
-    subtitle: "Production Mobile App, Live on Google Play",
-    description:
-      "A production mobile app with over 248,000 words of original content. Features an AI-powered conversational assistant using Claude API, 3-tier subscription system via RevenueCat, dynamic PDF report generation, and token-based usage tracking. Built entirely solo from architecture to deployment.",
-    tech: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "Supabase",
-      "Claude API",
-      "RevenueCat",
-    ],
-    category: "Mobile App",
-    image: "/images/portfolio/ai-sara-chatbot.png",
-    featured: true,
-    stats: [
-      "248,000+ Words",
-      "AI Chat Assistant",
-      "3 Subscription Tiers",
-      "Built 100% Solo",
-    ],
-  },
-  {
-    title: "AI Voice Assistant",
-    subtitle: "Speech-to-Text Mobile App",
-    description:
-      "An AI-powered voice assistant app with speech-to-text, natural language processing, and intelligent responses. Built with React Native and integrated with Claude API for natural conversation flow. Published on both the App Store and Google Play.",
-    tech: ["React Native", "Claude API", "Speech-to-Text", "TypeScript"],
-    category: "Mobile App",
-    image: "/images/portfolio/ai-assistant-voice.jpg",
-    featured: false,
-  },
-  {
-    title: "Finance Dashboard",
-    subtitle: "Real-Time Analytics Platform",
-    description:
-      "A real-time financial analytics dashboard with interactive charts, portfolio tracking, and automated reporting. Built with Next.js and Supabase for a fast, responsive experience. Deployed on Vercel with serverless API routes.",
-    tech: ["Next.js", "Supabase", "Tailwind CSS", "Vercel"],
-    category: "Web App",
-    image: "/images/portfolio/finance-dashboard.jpg",
-    featured: false,
-  },
-  {
-    title: "Healthcare Booking System",
-    subtitle: "Patient Management Platform",
-    description:
-      "A full-stack healthcare appointment booking platform with patient management, provider scheduling, and automated reminders. React Native mobile app paired with a Next.js admin panel and PostgreSQL backend.",
-    tech: ["React Native", "Next.js", "PostgreSQL", "Node.js"],
-    category: "Mobile App",
-    image: "/images/portfolio/healthcare-app.jpg",
-    featured: false,
-  },
-  {
-    title: "AgroPulse Farm AI",
-    subtitle: "Agricultural Intelligence System",
-    description:
-      "An AI-powered agricultural monitoring system with crop analysis, weather integration, and yield prediction. Uses Gemini API for image recognition and Claude for actionable recommendations delivered to mobile and web.",
-    tech: ["React Native", "Gemini API", "Claude API", "Supabase"],
-    category: "AI System",
-    image: "/images/portfolio/agropulse-ai-farm.jpg",
-    featured: false,
-  },
-  {
-    title: "Shield Safety Alert",
-    subtitle: "Personal Safety App",
-    description:
-      "A personal safety app with real-time location sharing, emergency alerts, and automated incident reporting. Push notifications, background location tracking, and integration with emergency services APIs.",
-    tech: ["React Native", "Expo", "Firebase", "Push Notifications"],
-    category: "Mobile App",
-    image: "/images/portfolio/shield-safety-app.jpg",
-    featured: false,
-  },
-  {
-    title: "Real Estate Platform",
-    subtitle: "Property Listing App",
-    description:
-      "A property listing and management platform with map integration, virtual tours, and mortgage calculators. Built for both buyers and agents with role-based access and real-time messaging.",
-    tech: ["React Native", "Supabase", "Maps API", "TypeScript"],
-    category: "Mobile App",
-    image: "/images/portfolio/real-estate-app.jpg",
-    featured: false,
-  },
-  {
-    title: "AI Notes with GPT",
-    subtitle: "Smart Note-Taking App",
-    description:
-      "An intelligent note-taking app that uses GPT to summarize, organize, and search notes using natural language. Auto-tagging, smart search, and AI-generated action items from meeting notes.",
-    tech: ["React Native", "OpenAI API", "Supabase", "TypeScript"],
-    category: "AI System",
-    image: "/images/portfolio/ai-notes-gpt.jpg",
-    featured: false,
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Delivered the complete app in half the time I expected. The AI chat feature works perfectly and my users love it. Would hire again without hesitation.",
-    author: "S.R.",
-    role: "Startup Founder",
-    project: "Mobile App",
-  },
-  {
-    quote:
-      "Vladi handled everything from the database design to the App Store submission. I didn't have to manage multiple contractors. One person, one project, done right.",
-    author: "M.K.",
-    role: "Business Owner",
-    project: "Full-Stack App",
-  },
-  {
-    quote:
-      "The subscription system is generating real revenue from day one. He set up payments, handled all the App Store compliance, and made sure everything worked before launch.",
-    author: "T.L.",
-    role: "Product Manager",
-    project: "SaaS Platform",
-  },
-  {
-    quote:
-      "I needed AI features added to my existing website. Vladi integrated Claude and built a custom chatbot that actually understands our product. Users find answers faster now.",
-    author: "A.D.",
-    role: "Marketing Director",
-    project: "AI Integration",
-  },
-  {
-    quote:
-      "Fast, clear communication, and the quality was better than what my previous agency delivered at 3x the cost. The code is clean and well documented.",
-    author: "J.P.",
-    role: "CTO",
-    project: "Web Application",
-  },
-];
-
-export const PROCESS = [
-  {
-    step: "01",
-    title: "Discovery",
-    description:
-      "We talk about your idea, goals, timeline, and budget. Free, no commitment.",
-  },
-  {
-    step: "02",
-    title: "Architecture",
-    description:
-      "I map out the tech stack, database, screens, and milestones. You approve before any code is written.",
-  },
-  {
-    step: "03",
-    title: "Build",
-    description:
-      "I build in short sprints and send you working demos every few days. You see progress, not excuses.",
-  },
-  {
-    step: "04",
-    title: "Launch",
-    description:
-      "I handle testing, app store submission, hosting setup, and go-live. Plus 30 days of free bug fixes.",
-  },
-];
-
-export const ABOUT = {
-  story: [
-    "Before I wrote my first line of code, I spent 15 years composing music for Hollywood films, performing at Carnegie Hall, and graduating from Berklee College of Music and the University of Music and Performing Arts in Munich.",
-    "That creative career gave me something most developers lack: an obsessive attention to detail, deep intuition for how people experience products, and the discipline to manage complex projects solo from start to finish.",
-    "I do not believe in throwing together random apps just to deliver something fast. I approach every project with care, deep research, and real strategic thinking. I look for what makes your idea different, how it can stand out in the market, and how to shape it into something people actually want.",
-    "My work goes beyond coding. I think about SEO, positioning, visual identity, and the details that make a product feel polished and professional. That includes custom images, icons, fonts, and creative assets that give your app a distinctive look and stronger brand presence.",
-    "The most important thing you should know about me is simple: I care. I care about the product, the details, and delivering work that is thoughtful, high quality, and built to make a real impact.",
-  ],
-  education: [
-    { school: "Berklee College of Music", degree: "BM, 2010" },
-    {
-      school: "University of Music and Performing Arts Munich",
-      degree: "MA, 2012",
-    },
-  ],
+  subtext:
+    "Senior AI engineer who ships production AI agents end to end, from the LLM toolchain down to billing and uptime. I build the AI toolchain, not just use it.",
+  cta1: "View work",
+  cta2: "Get in touch",
+  cta3: "Download CV",
 };
 
 export const STATS = [
-  { value: "10+", label: "Apps on App Store and Google Play" },
-  { value: "248K+", label: "Words of Production Content" },
-  { value: "3-5x", label: "Faster with Claude Code" },
-  { value: "100%", label: "Solo Built, End to End" },
+  { value: "100+", label: "Claude Code skills and commands" },
+  { value: "30+", label: "Projects shipped" },
+  { value: "20+", label: "Apps and sites live" },
+  { value: "10+", label: "Custom MCP servers" },
 ];
 
+// Capabilities mirror the CV competency set, AI toolchain first.
+export const CAPABILITIES = [
+  {
+    title: "Agentic LLM Systems",
+    description:
+      "Tool-calling agent loops, parallel sub-agent orchestration, per-tenant isolated state, and RAG over encrypted knowledge graphs.",
+    tech: ["Agent loops", "Sub-agents", "RAG", "Knowledge graphs"],
+    icon: "brain" as const,
+  },
+  {
+    title: "Claude Code and Codex Tooling",
+    description:
+      "A library of 100+ reusable skills, slash commands, lifecycle hooks, and custom subagents, with cross-model adversarial code review before every ship.",
+    tech: ["Claude Code", "Codex CLI", "Lifecycle hooks", "Subagents"],
+    icon: "terminal" as const,
+  },
+  {
+    title: "Custom MCP Servers",
+    description:
+      "Model Context Protocol servers on the official SDK, including a Dockerized read-only connector secured with OAuth2 PKCE and JWT.",
+    tech: ["MCP SDK", "Hono", "OAuth2 PKCE", "Docker"],
+    icon: "plug" as const,
+  },
+  {
+    title: "AI Voice Agents",
+    description:
+      "Production conversational phone agents with neural TTS, low-latency speech to text, and live tool calling for booking, lead capture, and warm transfer.",
+    tech: ["Retell AI", "ElevenLabs", "Deepgram", "Telnyx and Twilio"],
+    icon: "phone" as const,
+  },
+  {
+    title: "Full-Stack TypeScript",
+    description:
+      "Next.js and React apps on Supabase and Postgres with row-level security, edge functions, realtime, idempotent webhooks, and rate limiting.",
+    tech: ["TypeScript", "Next.js", "Supabase", "Postgres RLS"],
+    icon: "layers" as const,
+  },
+  {
+    title: "Payments and Monetization",
+    description:
+      "Stripe checkout and subscriptions, RevenueCat, native in-app purchases, server-side receipt verification, and idempotent entitlement webhooks.",
+    tech: ["Stripe", "RevenueCat", "In-app purchases", "Webhooks"],
+    icon: "creditCard" as const,
+  },
+];
+
+// Projects mirror the CV, in CV order, generic (never names private products).
+export const PROJECTS = [
+  {
+    title: "Custom AI Agent Toolchain",
+    tagline: "Claude Code · Codex · MCP",
+    badge: "Toolchain",
+    description:
+      "100+ reusable Claude Code and Codex CLI skills and custom slash commands, plus multiple Model Context Protocol servers on the official SDK. Includes a Dockerized read-only connector secured with OAuth2 PKCE and JWT, and lifecycle hooks for secret-leak prevention, sacred-path edit guards, and git safety.",
+    tech: [
+      "Model Context Protocol",
+      "@modelcontextprotocol/sdk",
+      "Hono",
+      "OAuth2 PKCE",
+      "JWT",
+      "Docker",
+      "Bun",
+      "Python",
+    ],
+    icon: "terminal" as const,
+    featured: true,
+  },
+  {
+    title: "Multi-Tenant Agentic Bot Fleet",
+    tagline: "Self-Hosted · 24/7",
+    badge: "Self-Hosted 24/7",
+    description:
+      "A production agentic LLM platform of roughly 1,300 source and 570 test files, with a tool-calling agent loop, parallel sub-agent orchestration, per-tenant isolated state, cost-aware multi-model routing with circuit breakers, prompt caching, and RAG over an encrypted per-tenant knowledge graph. One isolated VPS per tenant with tiered watchdogs and synthetic liveness probes.",
+    tech: [
+      "TypeScript",
+      "Bun",
+      "Anthropic SDK",
+      "Groq fallback",
+      "AES-256-GCM",
+      "pgvector",
+      "Hetzner Cloud",
+      "systemd",
+      "Sentry",
+    ],
+    icon: "network" as const,
+    featured: false,
+  },
+  {
+    title: "Production AI Voice Phone Agent",
+    tagline: "Live · 24/7",
+    badge: "Live 24/7",
+    description:
+      "A conversational AI receptionist live on a real carrier phone number, handling inbound calls with LLM-driven booking, lead capture, and human escalation. Built in two languages, plus a from-scratch streaming voice agent over a WebSocket media relay with token streaming and mid-utterance barge-in, a daily-spend kill switch, and a multi-tenant call-analytics pipeline with idempotent webhook upserts.",
+    tech: [
+      "Retell AI",
+      "Custom-LLM WebSocket",
+      "ElevenLabs",
+      "Deepgram",
+      "Telnyx",
+      "Twilio",
+      "Cal.com API",
+      "Supabase",
+      "Postgres RLS",
+    ],
+    icon: "phone" as const,
+    featured: false,
+  },
+  {
+    title: "Multi-Tenant Consumer AI App",
+    tagline: "iOS and Android · Live",
+    badge: "iOS and Android Live",
+    description:
+      "Live on the App Store and Google Play with an AI chat assistant, structured AI report generation across multiple product types, automatic PDF export, multi-language content, three subscription tiers, and a Supabase backend hardened with row-level security.",
+    tech: [
+      "React Native",
+      "Expo SDK 54",
+      "React 19",
+      "Supabase",
+      "Postgres RLS",
+      "RevenueCat",
+      "Stripe",
+      "Anthropic Claude API",
+      "EAS Build",
+    ],
+    icon: "smartphone" as const,
+    featured: false,
+  },
+];
+
+export const TECH = [
+  "Anthropic",
+  "OpenAI",
+  "Model Context Protocol",
+  "TypeScript",
+  "Next.js",
+  "React",
+  "Supabase",
+  "Docker",
+  "PostgreSQL",
+  "Stripe",
+  "Bun",
+  "Retell",
+  "ElevenLabs",
+];
+
+export const ABOUT = {
+  heading: "From concert halls to production AI",
+  story: [
+    "I build the AI toolchain, not just use it. My work is production agentic systems: multi-tenant LLM platforms, a library of 100+ Claude Code and Codex skills and slash commands, custom MCP servers on the official SDK, and conversational voice agents that take real phone calls.",
+    "I ship end to end. That means the agent loop and the cost-aware model routing, but also the billing, the row-level security, the webhooks, the uptime watchdogs, and the App Store compliance. One person, the whole stack, in production.",
+    "Before software, I spent a career in music. Award-winning jazz pianist and film composer, full-scholarship Master's and Bachelor's in Jazz Piano and Composition, named Best Jazz Musician in Europe, and performed at Carnegie Hall. I scored the film The Companion, winner of three Los Angeles Film Awards in 2024.",
+    "Decades of performing under deadline built the discipline and obsessive attention to detail that now go into every system I ship. I hold US citizenship through the EB-1A visa for extraordinary ability.",
+  ],
+  credentials: [
+    { label: "Best Jazz Musician in Europe", sub: "Award" },
+    { label: "Carnegie Hall", sub: "Performed" },
+    { label: "EB-1A, US Citizen", sub: "Extraordinary ability" },
+    { label: "3 LA Film Awards, 2024", sub: "Scored The Companion" },
+  ],
+};
+
 export const NAV_ITEMS = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Work", href: "#work" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

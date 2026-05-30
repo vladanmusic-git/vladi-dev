@@ -1,179 +1,107 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
-import { ExternalLink } from "lucide-react";
-import { PROJECTS, LINKS } from "@/lib/constants";
+import { Terminal, Network, Phone, Smartphone, ArrowUpRight } from "lucide-react";
+import { PROJECTS } from "@/lib/constants";
+import { cn } from "@/lib/cn";
 import AnimateIn from "./AnimateIn";
+import SpotlightCard from "./ui/SpotlightCard";
 
-const CATEGORIES = ["All", "Mobile App", "Web App", "AI System"] as const;
+const iconMap = {
+  terminal: Terminal,
+  network: Network,
+  phone: Phone,
+  smartphone: Smartphone,
+};
+
+// Bento spans: featured toolchain (0) and consumer app (3) go wide.
+const spanClass = [
+  "lg:col-span-2",
+  "lg:col-span-1",
+  "lg:col-span-1",
+  "lg:col-span-2",
+];
 
 export default function Portfolio() {
-  const [filter, setFilter] = useState<string>("All");
-  const featured = PROJECTS.find((p) => p.featured);
-  const others = PROJECTS.filter((p) => !p.featured).filter(
-    (p) => filter === "All" || p.category === filter,
-  );
-
   return (
-    <section id="portfolio" className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="work" className="relative py-20 md:py-28">
+      <div className="absolute inset-0 grid-bg opacity-40" aria-hidden />
+      <div className="relative mx-auto max-w-6xl px-6">
         <AnimateIn variant="fadeIn">
-          <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Featured Work
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-accent-2">
+            Selected work
+          </p>
+          <h2 className="mt-3 text-center text-3xl font-bold tracking-tight md:text-4xl">
+            Production AI systems, shipped
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
-            10+ apps published on the App Store and Google Play. Every pixel,
-            every line of code.
+            Agentic platforms and tooling first, then voice, then the apps that
+            run on top. All live, all built solo.
           </p>
         </AnimateIn>
 
-        {/* Featured project */}
-        {featured && (
-          <AnimateIn variant="fadeUp" className="mt-14">
-            <div className="rounded-3xl bg-gradient-to-br from-accent via-purple-500 to-pink-500 p-px">
-            <div className="card-hover overflow-hidden rounded-3xl bg-card">
-              <div className="grid gap-0 md:grid-cols-2">
-                <div className="relative grid grid-cols-2 gap-3 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-5 sm:p-8 md:p-10">
-                  <div className="relative aspect-[9/16] overflow-hidden rounded-2xl shadow-xl">
-                    <Image
-                      src="/images/portfolio/ai-sara-chatbot.png"
-                      alt="Sara AI Chatbot"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="relative aspect-[9/16] overflow-hidden rounded-2xl shadow-xl">
-                    <Image
-                      src="/images/portfolio/universum-premium.jpg"
-                      alt="Svet Brojeva Universum"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14">
-                  <span className="text-xs font-bold uppercase tracking-widest text-accent">
-                    Featured Project
-                  </span>
-                  <div className="mt-3 flex items-center gap-3">
-                    <div className="relative h-10 w-10 overflow-hidden rounded-xl">
-                      <Image
-                        src="/images/svet-brojeva-icon.png"
-                        alt="Svet Brojeva"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="text-3xl font-bold md:text-4xl">
-                      {featured.title}
-                    </h3>
-                  </div>
-                  <p className="mt-2 text-sm font-medium text-accent">
-                    {featured.subtitle}
-                  </p>
-                  {featured.stats && (
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {featured.stats.map((stat) => (
-                        <span
-                          key={stat}
-                          className="rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-accent"
-                        >
-                          {stat}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <p className="mt-5 text-base leading-relaxed text-muted">
-                    {featured.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {featured.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-card-border px-3 py-1 text-xs text-muted"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={LINKS.googlePlay}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-shimmer mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
-                  >
-                    View on Google Play
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            </div>
-          </AnimateIn>
-        )}
-
-        {/* Category filter */}
-        <AnimateIn variant="fadeIn" className="mt-12">
-          <div className="flex flex-wrap justify-center gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`relative rounded-full px-5 py-2 text-sm font-medium transition-all ${
-                  filter === cat
-                    ? "bg-accent text-white shadow-lg shadow-accent/20"
-                    : "border border-card-border text-muted hover:border-accent/30 hover:text-foreground"
-                }`}
+        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          {PROJECTS.map((project, i) => {
+            const Icon = iconMap[project.icon];
+            const wide = project.featured || i === 3;
+            return (
+              <AnimateIn
+                key={project.title}
+                variant="fadeUp"
+                delay={i * 0.07}
+                className={cn(spanClass[i])}
               >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </AnimateIn>
-
-        {/* Project grid */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {others.map((project, i) => (
-            <AnimateIn key={project.title} variant="fadeUp" delay={i * 0.08}>
-              <div className="card-hover group h-full overflow-hidden rounded-2xl border border-card-border bg-card">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-5">
-                    <h3 className="text-lg font-semibold text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs text-white/70">{project.category}</p>
+                <SpotlightCard
+                  className={cn(
+                    "group flex h-full flex-col p-7 md:p-8",
+                    project.featured && "border-beam",
+                  )}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-card-border bg-gradient-to-br from-accent/20 to-accent-2/10">
+                      <Icon className="h-6 w-6 text-accent-2" />
+                    </div>
+                    <span className="rounded-full border border-card-border bg-white/[0.03] px-3 py-1 text-xs font-medium text-foreground/70">
+                      {project.badge}
+                    </span>
                   </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-xs font-medium text-accent">
-                    {project.subtitle}
+
+                  <h3
+                    className={cn(
+                      "mt-5 font-bold tracking-tight",
+                      wide ? "text-2xl md:text-3xl" : "text-xl",
+                    )}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 font-mono text-xs text-accent-2">
+                    {project.tagline}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
+
+                  <p className="mt-4 text-sm leading-relaxed text-muted">
                     {project.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+
+                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-card-border px-3 py-1 text-xs text-muted"
+                        className="rounded-full border border-card-border bg-white/[0.03] px-2.5 py-1 text-xs text-muted"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-                </div>
-              </div>
-            </AnimateIn>
-          ))}
+                </SpotlightCard>
+              </AnimateIn>
+            );
+          })}
         </div>
+
+        <p className="mt-10 flex items-center justify-center gap-1.5 text-sm text-muted">
+          30+ projects shipped end to end.
+          <a href="#contact" className="link-underline inline-flex items-center gap-1 text-foreground">
+            Ask about the rest
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </p>
       </div>
     </section>
   );

@@ -9,24 +9,27 @@ export default function TypeWriter({ roles }: { roles: string[] }) {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
+    }, 2800);
     return () => clearInterval(timer);
   }, [roles.length]);
 
   return (
-    <div className="h-8 overflow-hidden md:h-10">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={roles[index]}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="block text-lg font-medium text-accent md:text-xl"
-        >
-          {roles[index]}
-        </motion.span>
-      </AnimatePresence>
+    <div className="flex items-center gap-2.5 text-lg font-medium md:text-xl">
+      <span className="font-mono text-accent-2">{"//"}</span>
+      <div className="relative h-8 overflow-hidden md:h-9">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={roles[index]}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="block whitespace-nowrap text-gradient-accent"
+          >
+            {roles[index]}
+          </motion.span>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_ITEMS } from "@/lib/constants";
+import { NAV_ITEMS, SITE } from "@/lib/constants";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,14 +23,20 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || menuOpen
-          ? "bg-background/80 backdrop-blur-lg border-b border-card-border"
+          ? "border-b border-card-border bg-background/70 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-lg font-semibold tracking-tight">
-          VM
+        <a href="#" className="group flex items-center gap-2.5">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-[#05060a]">
+            VM
+          </span>
+          <span className="text-sm font-semibold tracking-tight text-foreground/90">
+            Vladi Mijatovic
+          </span>
         </a>
+
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) => (
             <a
@@ -42,12 +48,13 @@ export default function Header() {
             </a>
           ))}
         </nav>
+
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            className="btn-shimmer rounded-full bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+            href={`mailto:${SITE.email}`}
+            className="hidden rounded-full border border-card-border bg-white/5 px-5 py-2 text-sm font-medium text-foreground transition-colors hover:border-card-border-strong sm:inline-block"
           >
-            Hire Me
+            Get in touch
           </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -59,15 +66,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Scroll progress bar */}
       <div
-        className="h-0.5 bg-gradient-to-r from-accent via-purple-500 to-pink-500 transition-all duration-150"
+        className="h-px bg-gradient-to-r from-accent to-accent-2 transition-all duration-150"
         style={{ width: `${scrollProgress}%` }}
       />
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <nav className="border-t border-card-border px-6 pb-4 md:hidden">
+        <nav className="border-t border-card-border bg-background/90 px-6 pb-4 backdrop-blur-xl md:hidden">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
