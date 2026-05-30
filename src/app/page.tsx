@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroGalaxy from "@/components/heroes/HeroGalaxy";
 import MainSections from "@/components/MainSections";
 import Footer from "@/components/Footer";
 import VariantSwitcher from "@/components/VariantSwitcher";
@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <Hero />
+        <HeroGalaxy />
         <MainSections />
       </main>
       <Footer />

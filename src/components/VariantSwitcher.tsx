@@ -1,9 +1,8 @@
 "use client";
 
 const VARIANTS = [
-  { href: "/", label: "Aurora" },
+  { href: "/", label: "Home (Galaxy)" },
   { href: "/v/aurora", label: "Aurora + icons" },
-  { href: "/v/galaxy", label: "Galaxy 3D" },
   { href: "/v/scroll", label: "Scroll morph" },
 ];
 

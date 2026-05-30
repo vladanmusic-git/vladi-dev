@@ -1,13 +1,26 @@
 "use client";
 
 import { Suspense, lazy } from "react";
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail, FileDown } from "lucide-react";
 import { HERO, CV_DOWNLOAD, SITE } from "@/lib/constants";
 import TypeWriter from "../TypeWriter";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
+const CHIPS = [
+  { label: "Anthropic", top: "-7%", left: "-16%" },
+  { label: "MCP", top: "10%", left: "104%" },
+  { label: "OpenAI", top: "46%", left: "-24%" },
+  { label: "TypeScript", top: "72%", left: "100%" },
+  { label: "Next.js", top: "100%", left: "10%" },
+  { label: "Bun", top: "92%", left: "76%" },
+];
+
 export default function HeroGalaxy() {
+  const reduce = useReducedMotion();
+
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
       {/* 3D galaxy backdrop (external Spline scene, lazy-loaded) */}
@@ -18,13 +31,12 @@ export default function HeroGalaxy() {
             style={{ width: "100%", height: "100%" }}
           />
         </Suspense>
-        {/* Legibility + fade into the page */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Hero content */}
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-[100svh] max-w-6xl items-center px-6">
+      {/* Content */}
+      <div className="pointer-events-none relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center gap-12 px-6 py-32 md:flex-row md:justify-between md:py-0">
         <div className="max-w-2xl">
           <div className="pointer-events-auto mb-6 inline-flex items-center gap-2.5 rounded-full border border-card-border bg-white/5 px-4 py-1.5 text-sm font-medium text-foreground/80 backdrop-blur">
             <span className="relative flex h-2 w-2">
@@ -64,6 +76,38 @@ export default function HeroGalaxy() {
               <FileDown className="h-4 w-4" />
               {HERO.cta3}
             </a>
+          </div>
+        </div>
+
+        {/* Headshot + floating tech icons */}
+        <div className="pointer-events-auto relative flex-shrink-0">
+          <div className="pointer-events-none absolute inset-0 hidden sm:block" aria-hidden>
+            {CHIPS.map((chip, i) => (
+              <motion.span
+                key={chip.label}
+                className="absolute whitespace-nowrap rounded-full border border-card-border bg-background-elev/70 px-3 py-1 text-xs font-medium text-foreground/80 backdrop-blur"
+                style={{ top: chip.top, left: chip.left }}
+                animate={reduce ? undefined : { y: [0, -10, 0] }}
+                transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+              >
+                {chip.label}
+              </motion.span>
+            ))}
+          </div>
+          <div className="animate-float relative">
+            <div className="absolute -inset-10 rounded-full bg-gradient-to-br from-violet-500/25 via-cyan-500/15 to-fuchsia-500/15 blur-3xl" />
+            <div className="gradient-ring border-beam relative rounded-[2rem] shadow-2xl">
+              <div className="relative h-60 w-60 overflow-hidden rounded-[calc(2rem-2px)] md:h-72 md:w-72">
+                <Image
+                  src="/images/vladi-headshot.png"
+                  alt="Vladi Mijatovic"
+                  fill
+                  sizes="(max-width: 768px) 240px, 288px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
