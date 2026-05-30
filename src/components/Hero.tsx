@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
         </AnimateIn>
 
-        {/* Headshot — float on the outer element, tilt on the inner, so they compose */}
+        {/* Headshot. Float on the outer element, tilt on the inner, so they compose. */}
         <AnimateIn variant="scaleIn" className="flex-shrink-0">
           <div className="animate-float">
             <Tilt>
