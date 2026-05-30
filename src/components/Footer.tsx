@@ -25,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-muted transition-colors hover:text-foreground"
+            className="inline-flex rounded-lg p-2 text-muted transition-colors hover:text-foreground"
           >
             <Linkedin className="h-4 w-4" />
           </a>
@@ -34,7 +34,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Upwork"
-            className="text-muted transition-colors hover:text-foreground"
+            className="inline-flex rounded-lg p-2 text-muted transition-colors hover:text-foreground"
           >
             <Briefcase className="h-4 w-4" />
           </a>
