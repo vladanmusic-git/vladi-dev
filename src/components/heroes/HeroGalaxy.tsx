@@ -20,6 +20,8 @@ export default function HeroGalaxy() {
         </Suspense>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        {/* Mask the Spline free-tier "Built with Spline" badge (bottom-right) */}
+        <div className="pointer-events-none absolute bottom-0 right-0 z-[2] h-24 w-60 bg-gradient-to-tl from-background via-background to-transparent" />
       </div>
 
       {/* Content */}
