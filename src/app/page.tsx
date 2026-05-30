@@ -1,13 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import TechStrip from "@/components/TechStrip";
-import Stats from "@/components/Stats";
-import Portfolio from "@/components/Portfolio";
-import Capabilities from "@/components/Capabilities";
-import About from "@/components/About";
-import Journey from "@/components/Journey";
-import Contact from "@/components/Contact";
+import MainSections from "@/components/MainSections";
 import Footer from "@/components/Footer";
+import VariantSwitcher from "@/components/VariantSwitcher";
 
 export default function Home() {
   return (
@@ -15,15 +10,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <TechStrip />
-        <Stats />
-        <Portfolio />
-        <Capabilities />
-        <About />
-        <Journey />
-        <Contact />
+        <MainSections />
       </main>
       <Footer />
+      <VariantSwitcher current="/" />
     </>
   );
 }
