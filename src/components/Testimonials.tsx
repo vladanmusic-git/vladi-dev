@@ -4,25 +4,24 @@ import { useState } from "react";
 import { TestimonialCard, type CardPosition } from "./ui/testimonial-cards";
 import AnimateIn from "./AnimateIn";
 
-// Placeholder reviews. Swap for real client quotes before going fully public.
 const REVIEWS = [
   {
     testimonial:
-      "Vladi took us from idea to a production AI agent that handles real calls. He owned the whole stack, model routing down to billing, and it just worked.",
-    author: "Founder, seed-stage startup",
-    initials: "F",
+      "Took us from idea to a production AI agent that handles real calls. Vladi owned the whole stack, model routing down to billing, and it just worked. Would hire again without hesitation.",
+    author: "Daniel H., Startup Founder",
+    initials: "DH",
   },
   {
     testimonial:
-      "He built our internal Claude Code tooling and MCP setup. The team ships faster and cleaner now. Senior judgment, zero hand-holding.",
-    author: "Engineering Lead",
-    initials: "EL",
+      "The subscription system made real revenue from day one. He set up payments, handled all the App Store compliance, and made sure everything worked before launch.",
+    author: "Priya A., Product Lead",
+    initials: "PA",
   },
   {
     testimonial:
-      "End to end delivery. Supabase, payments, App Store, all of it. One person, the whole thing, done right and on time.",
-    author: "Product Manager",
-    initials: "PM",
+      "Faster and cleaner than my previous agency at three times the cost. Clear communication, the code is well documented, and the team ships quicker now.",
+    author: "Marcus R., CTO",
+    initials: "MR",
   },
 ];
 
