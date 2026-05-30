@@ -4,7 +4,6 @@ import Portfolio from "@/components/Portfolio";
 import Capabilities from "@/components/Capabilities";
 import ShowcaseMorph from "@/components/ShowcaseMorph";
 import About from "@/components/About";
-import Journey from "@/components/Journey";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 
@@ -18,7 +17,6 @@ export default function MainSections() {
       <Capabilities />
       <ShowcaseMorph />
       <About />
-      <Journey />
       <Testimonials />
       <Contact />
     </>

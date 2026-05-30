@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Link as LinkIcon, Zap } from "lucide-react";
+import { ArrowRight, Link as LinkIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -235,21 +235,6 @@ export default function RadialOrbitalTimeline({
                     </CardHeader>
                     <CardContent className="text-xs text-white/80">
                       <p>{item.content}</p>
-                      <div className="mt-4 border-t border-white/10 pt-3">
-                        <div className="mb-1 flex items-center justify-between text-xs">
-                          <span className="flex items-center">
-                            <Zap size={10} className="mr-1" />
-                            Depth
-                          </span>
-                          <span className="font-mono">{item.energy}%</span>
-                        </div>
-                        <div className="h-1 w-full overflow-hidden rounded-full bg-white/10">
-                          <div
-                            className="h-full bg-gradient-to-r from-accent to-accent-2"
-                            style={{ width: `${item.energy}%` }}
-                          />
-                        </div>
-                      </div>
 
                       {item.relatedIds.length > 0 && (
                         <div className="mt-4 border-t border-white/10 pt-3">
