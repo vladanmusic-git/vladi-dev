@@ -9,7 +9,7 @@ export const SITE = {
 };
 
 export const LINKS = {
-  linkedin: "https://www.linkedin.com/in/vladi-jobs-1ba27b3b5",
+  linkedin: "https://www.linkedin.com/in/vladimijatovic",
   upwork: "https://www.upwork.com/freelancers/~01fe02d985743fdef0",
 };
 
