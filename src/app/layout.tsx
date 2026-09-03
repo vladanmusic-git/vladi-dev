@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE, LINKS } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,35 +53,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Vladi Mijatovic",
-  url: SITE.url,
-  image: `${SITE.url}/opengraph-image`,
-  jobTitle: "Senior AI Engineer",
-  email: `mailto:${SITE.email}`,
-  description: SITE.description,
-  sameAs: [LINKS.linkedin],
-  knowsAbout: [
-    "Agentic LLM Systems",
-    "Claude Code",
-    "Codex",
-    "Model Context Protocol",
-    "MCP servers",
-    "AI voice agents",
-    "Prompt caching",
-    "RAG",
-    "TypeScript",
-    "Next.js",
-    "Supabase",
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "University of Music and Performing Arts Munich",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,10 +61,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
         {children}
       </body>
     </html>

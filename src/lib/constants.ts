@@ -205,4 +205,5 @@ export const NAV_ITEMS = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+  { label: "Studio", href: "/studio" },
 ];
