@@ -60,7 +60,7 @@ export const CAPABILITIES = [
   {
     title: "AI Voice Agents",
     description:
-      "Production conversational phone agents with neural TTS, low-latency speech to text, and live tool calling for booking, lead capture, and warm transfer.",
+      "Conversational phone agents with neural TTS, low-latency speech to text, and tool calling for booking, lead capture, and warm transfer.",
     tech: ["Retell AI", "ElevenLabs", "Deepgram", "Telnyx and Twilio"],
     icon: "phone" as const,
   },
@@ -180,16 +180,16 @@ export const TECH = [
 ];
 
 export const ABOUT = {
-  heading: "From concert halls to production AI",
+  heading: "From concert halls to AI",
   story: [
-    "I build the AI toolchain, not just use it. My work is agentic systems: multi-tenant LLM platforms, a library of Claude Code and Codex skills and slash commands, custom MCP servers on the official SDK, and conversational voice agents built for real phone calls.",
-    "I ship end to end. That means the agent loop and the cost-aware model routing, but also the billing, the row-level security, the webhooks, the uptime watchdogs, and the App Store compliance. One person, the whole stack, in production.",
-    "Before software, I spent a career in music. Award-winning jazz pianist and film composer, full-scholarship Master's and Bachelor's in Jazz Piano and Composition, and performed at Carnegie Hall. I scored the film The Companion, winner of three Los Angeles Film Awards in 2024.",
+    "I build the AI toolchain, not just use it. My work is agentic systems: a multi-tenant LLM platform I built and ran, a library of Claude Code and Codex skills and slash commands, custom MCP servers on the official SDK, and conversational voice agents built for real phone calls.",
+    "I ship end to end. That means the agent loop and the cost-aware model routing, but also the billing, the row-level security, the webhooks, the uptime watchdogs, and the App Store compliance. One person, the whole stack, including my own app Jazz Piano Master, live on the App Store and Google Play.",
+    "Before software, I spent a career in music as a jazz pianist and film composer. My film and music credits include HollyShorts, the LA Film Festival and Carnegie Hall, and I hold a Master of Arts in jazz piano performance from Munich.",
     "Decades of performing under deadline built the discipline and obsessive attention to detail that now go into every system I ship.",
   ],
   credentials: [
     { label: "Carnegie Hall", sub: "Performed", icon: "hall" as const },
-    { label: "3 LA Film Awards, 2024", sub: "Scored The Companion", icon: "film" as const },
+    { label: "Master of Arts, Jazz Piano", sub: "Munich", icon: "degree" as const },
   ],
 };
 

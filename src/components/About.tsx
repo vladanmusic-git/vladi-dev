@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Building2, Film } from "lucide-react";
+import { Building2, GraduationCap } from "lucide-react";
 import { ABOUT } from "@/lib/constants";
 import AnimateIn from "./AnimateIn";
 
-const credIcons = { hall: Building2, film: Film };
+const credIcons = { hall: Building2, degree: GraduationCap };
 
 export default function About() {
   return (

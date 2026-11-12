@@ -37,7 +37,7 @@ export default function Portfolio() {
             Selected work
           </p>
           <h2 className="mt-3 text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Production AI systems, shipped
+            Selected AI systems I built
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
             Agentic platforms and tooling first, then voice, then the apps that
