@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_ITEMS, SITE } from "@/lib/constants";
+import { NAV_ITEMS, LINKS } from "@/lib/constants";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +28,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="group flex items-center gap-2.5">
+        <a href="/" className="group flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-[#05060a]">
             VM
           </span>
@@ -51,10 +51,13 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href={`mailto:${SITE.email}`}
+            href={LINKS.upwork}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-upwork-click="header"
             className="hidden rounded-full border border-card-border bg-white/5 px-5 py-2 text-sm font-medium text-foreground transition-colors hover:border-card-border-strong sm:inline-block"
           >
-            Get in touch
+            Hire on Upwork
           </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}

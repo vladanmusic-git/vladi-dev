@@ -1,23 +1,16 @@
 "use client";
 
-import { Suspense, lazy } from "react";
-import { ArrowRight, Mail, FileDown } from "lucide-react";
-import { HERO, CV_DOWNLOAD, SITE } from "@/lib/constants";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { HERO, LINKS } from "@/lib/constants";
 import TypeWriter from "../TypeWriter";
-
-const Spline = lazy(() => import("@splinetool/react-spline"));
+import SafeSpline from "./SafeSpline";
 
 export default function HeroGalaxy() {
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* 3D galaxy backdrop (external Spline scene, lazy-loaded) */}
-      <div className="absolute inset-0 z-0">
-        <Suspense fallback={<div className="h-full w-full bg-background" />}>
-          <Spline
-            scene="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode"
-            style={{ width: "100%", height: "100%" }}
-          />
-        </Suspense>
+      {/* 3D galaxy backdrop (external Spline scene, lazy-loaded, skipped without WebGL) */}
+      <div className="absolute inset-0 z-0 bg-background">
+        <SafeSpline scene="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/30 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         {/* Mask the Spline free-tier "Built with Spline" badge (bottom-right) */}
@@ -52,18 +45,14 @@ export default function HeroGalaxy() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={`mailto:${SITE.email}`}
+              href={LINKS.upwork}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-upwork-click="hero"
               className="glass-card inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-foreground transition-all hover:bg-white/5"
             >
-              <Mail className="h-4 w-4" />
               {HERO.cta2}
-            </a>
-            <a
-              href={CV_DOWNLOAD}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3.5 font-medium text-muted transition-colors hover:text-foreground"
-            >
-              <FileDown className="h-4 w-4" />
-              {HERO.cta3}
+              <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
         </div>

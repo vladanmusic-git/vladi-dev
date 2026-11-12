@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "fs/promises";
 import { join } from "path";
 
-export const alt = "Vladi Mijatovic, Senior AI Engineer";
+export const alt = "Vladi Mijatovic, AI Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -106,7 +106,7 @@ export default async function OG() {
                 fontWeight: 600,
               }}
             >
-              Senior AI Engineer
+              AI Developer
             </div>
             <div
               style={{
@@ -128,7 +128,7 @@ export default async function OG() {
                 marginTop: 20,
               }}
             >
-              Agentic LLM systems, Claude Code and MCP tooling, AI voice agents.
+              AI agents, Claude and OpenAI API, React Native and Expo apps.
             </div>
           </div>
 

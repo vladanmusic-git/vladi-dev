@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Award, Building2, BadgeCheck, Film } from "lucide-react";
+import { Building2, Film } from "lucide-react";
 import { ABOUT } from "@/lib/constants";
 import AnimateIn from "./AnimateIn";
 
-const credIcons = [Award, Building2, BadgeCheck, Film];
+const credIcons = { hall: Building2, film: Film };
 
 export default function About() {
   return (
@@ -46,8 +46,8 @@ export default function About() {
 
             <AnimateIn variant="fadeUp" delay={0.2}>
               <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {ABOUT.credentials.map((cred, i) => {
-                  const Icon = credIcons[i % credIcons.length];
+                {ABOUT.credentials.map((cred) => {
+                  const Icon = credIcons[cred.icon];
                   return (
                     <div
                       key={cred.label}

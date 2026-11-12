@@ -41,7 +41,7 @@ export default function Portfolio() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-muted">
             Agentic platforms and tooling first, then voice, then the apps that
-            run on top. All live, all built solo.
+            run on top. All built solo.
           </p>
         </AnimateIn>
 
@@ -118,9 +118,9 @@ export default function Portfolio() {
         </div>
 
         <p className="mt-10 flex items-center justify-center gap-1.5 text-sm text-muted">
-          30+ projects shipped end to end.
+          Need something like this?
           <a href="#contact" className="link-underline inline-flex items-center gap-1 text-foreground">
-            Ask about the rest
+            Work with me
             <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </p>
