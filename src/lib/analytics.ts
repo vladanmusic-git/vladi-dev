@@ -63,7 +63,7 @@ export function privacySignalOn(): boolean {
 // that does not say where the device is. Over-inclusive on purpose: when in
 // doubt the visitor is asked. The zone is read on the device and never sent.
 const ASK_FIRST_ZONES =
-  /^(Europe\/|Atlantic\/(Azores|Madeira|Canary|Reykjavik|Faroe|Faeroe)$|Arctic\/Longyearbyen$|Asia\/(Nicosia|Famagusta)$|Indian\/(Reunion|Mayotte)$|America\/(Guadeloupe|Martinique|Cayenne|St_Barthelemy|Marigot)$|Etc\/|(UTC|UCT|GMT|Universal|Zulu|GB|GB-Eire|Eire|Iceland|Poland|Portugal|CET|EET|WET|MET)$)/;
+  /^(Europe\/|Atlantic\/(Azores|Madeira|Canary|Reykjavik|Faroe|Faeroe|Jan_Mayen)$|Africa\/Ceuta$|Arctic\/Longyearbyen$|Asia\/(Nicosia|Famagusta)$|Indian\/(Reunion|Mayotte)$|America\/(Guadeloupe|Martinique|Cayenne|St_Barthelemy|Marigot)$|Etc\/|(UTC|UCT|GMT|Universal|Zulu|GB|GB-Eire|Eire|Iceland|Poland|Portugal|CET|EET|WET|MET)$)/;
 
 export function shouldAskFirst(): boolean {
   try {
@@ -191,6 +191,15 @@ export async function startAnalytics(pathname: string) {
   try {
     const { default: posthog } = await import("posthog-js");
     landing = readLanding();
+    // A link carrying a PostHog toolbar hash would make the library save a key
+    // on the device. Drop that hash before init so nothing is ever stored.
+    if (/__posthog=|[#&]state=/.test(window.location.hash)) {
+      window.history.replaceState(
+        window.history.state,
+        "",
+        window.location.pathname + window.location.search,
+      );
+    }
     posthog.init(POSTHOG_TOKEN, {
       api_host: API_HOST,
       ui_host: "https://us.posthog.com",
@@ -212,6 +221,10 @@ export async function startAnalytics(pathname: string) {
       disable_web_experiments: true,
       disable_external_dependency_loading: true,
       advanced_disable_flags: true,
+      // Ad click ids (fbclid, gclid and the like) are per-click identifiers:
+      // masked everywhere, the page address included. URL fragments are not sent.
+      mask_personal_data_properties: true,
+      disable_capture_url_hashes: true,
       before_send: (event) => (stopped ? null : event),
     });
     posthog.register({
@@ -223,7 +236,8 @@ export async function startAnalytics(pathname: string) {
     document.addEventListener("auxclick", onClick, true);
     window.addEventListener("scroll", onScroll, { passive: true });
     if (stopped) return;
-    trackPage(pathname);
+    // The visitor may have moved on while the library loaded: count where they are now.
+    trackPage(window.location.pathname);
   } catch {
     // Analytics must never break the page. A failed load just counts nothing.
     setStatus("off");

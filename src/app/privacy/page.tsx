@@ -28,7 +28,7 @@ const SECTIONS: { heading: string; body: string; items?: string[]; extra?: React
   },
   {
     heading: "What it does not do",
-    body: "There are no cookies, and nothing is stored on your device: no local storage and no session storage. Each visit gets a random number that lives only in your browser's memory and is gone when you reload or close the page, so visits cannot be linked to each other or to you. There are no names, emails or accounts, no profiles of people, no session recordings and no ad trackers.",
+    body: "There are no cookies, and nothing is kept on your device. The counting script only checks for a moment that browser storage works and saves nothing in it. Each visit gets a random number that lives only in your browser's memory and is gone when you reload or close the page. Ad click codes that some links carry (from Facebook, Instagram or Google, for example) are masked before anything is sent, so visits cannot be linked to each other or to you. There are no names, emails or accounts, no profiles of people, no session recordings and no ad trackers.",
   },
   {
     heading: "Your choice",
