@@ -7,7 +7,10 @@ const credIcons = { hall: Building2, degree: GraduationCap };
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 md:py-28">
+    // overflow-x-clip: the photo slides in from 40px to the right, which made a
+    // phone page 16px wider than the screen until it revealed. Clip (not hidden)
+    // creates no scroll container, so the photo's md:sticky keeps working.
+    <section id="about" className="relative overflow-x-clip py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-start gap-12 md:grid-cols-[300px_1fr] md:gap-16">
           {/* Photo + credentials */}

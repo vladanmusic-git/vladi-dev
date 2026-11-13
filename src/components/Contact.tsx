@@ -6,7 +6,10 @@ import AnimateIn from "./AnimateIn";
 // profile. No email, LinkedIn or CV here, so nothing moves a buyer off Upwork.
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-20 md:py-28">
+    // overflow-x-clip: the glow below reaches 40px past the card, which made a
+    // phone page 16px wider than the screen. Clip (not hidden) keeps the glow's
+    // vertical bleed and creates no scroll container.
+    <section id="contact" className="relative overflow-x-clip py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <AnimateIn variant="fadeUp">
           <div className="relative mx-auto max-w-3xl">
